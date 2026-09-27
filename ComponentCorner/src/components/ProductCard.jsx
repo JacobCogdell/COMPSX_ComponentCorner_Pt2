@@ -1,6 +1,6 @@
 import './ProductCard.css';
 
-export default function ProductCard({ name, price, image, description }) {
+export default function ProductCard({ name, price, image, description, onAddToCart }) {
   return (
     <div className="product-card">
       <img src={image} alt={name} className="product-image" />
@@ -10,6 +10,13 @@ export default function ProductCard({ name, price, image, description }) {
       <p className="product-price">${price}</p>
 
       <p className="product-description">{description}</p>
+
+      <button 
+        className="add-to-cart-button"
+        onClick={onAddToCart}
+      >
+        Add to Cart
+      </button>
     </div>
   );
 }
